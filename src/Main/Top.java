@@ -34,7 +34,7 @@ public class Top extends HttpServlet {
 	    String sql = "SELECT * from item";
 	    Map<String,String> itemList = new HashMap<String,String>();
 
-	    //SQL実行
+	    //SQL実行です
         try {
         	itemList = DB.getDB(sql);
 		} catch (ClassNotFoundException e) {
