@@ -23,11 +23,18 @@ public class Cart extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String view = "/WEB-INF/view/jsp/cart.jsp";
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-
+	    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/jsp/cart.jsp");
 	    dispatcher.forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	    request.setCharacterEncoding("UTF-8");
+		String name = request.getParameter("name");
+		String price = request.getParameter("price");
+		int itemNum = 1;
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/jsp/cart.jsp");
+	    dispatcher.forward(request, response);
+    }
 
 }
